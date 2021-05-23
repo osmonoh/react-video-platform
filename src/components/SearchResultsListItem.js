@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { MyContext } from "../context/MyContext";
 
-const SearchResultsListItem = ({ video, onVideoClick }) => {
+const SearchResultsListItem = ({ video }) => {
+  const { onVideoClick } = useContext(MyContext);
+
   const videoData = video.snippet;
 
   const onClick = () => {

@@ -2,12 +2,11 @@ import React from "react";
 import Header from "./Header";
 import SearchResultsList from "./SearchResultsList";
 
-const SearchResults = ({ onSearchSubmit, onVideoClick, videosList }) => {
+const SearchResults = () => {
   return (
     <div className="ui container">
-      <Header onSearchSubmit={onSearchSubmit} />
-      {/* <h1>results</h1> */}
-      <SearchResultsList onVideoClick={onVideoClick} videosList={videosList} />
+      <Header />
+      <SearchResultsList />
     </div>
   );
 };

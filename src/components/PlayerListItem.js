@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MyContext } from "../context/MyContext";
 
-const PlayerListItem = ({ video, onVideoClick }) => {
+const PlayerListItem = ({ video }) => {
+  const { onVideoClick } = useContext(MyContext);
+
   return (
     <div
       className="item"

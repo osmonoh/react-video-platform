@@ -3,26 +3,16 @@ import Header from "./Header";
 import PlayerList from "./PlayerList";
 import PlayerVideo from "./PlayerVideo";
 
-const Player = ({
-  onSearchSubmit,
-  getVideoList,
-  onVideoClick,
-  selectedVideo,
-}) => {
+const Player = () => {
   return (
     <div className="ui container">
-      <Header onSearchSubmit={onSearchSubmit} />
-      {/* <h1>watch</h1> */}
+      <Header />
       <div className="ui grid">
         <div className="eleven wide column">
-          <PlayerVideo selectedVideo={selectedVideo} />
+          <PlayerVideo />
         </div>
         <div className="five wide column">
-          <PlayerList
-            getVideoList={getVideoList}
-            onVideoClick={onVideoClick}
-            selectedVideo={selectedVideo}
-          />
+          <PlayerList />
         </div>
       </div>
     </div>

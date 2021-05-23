@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import VideoGalleryRow from "./VideoGalleryRow";
 
-const VideoGallery = ({ getVideoList, onVideoClick }) => {
+const VideoGallery = () => {
   const [suggestedTerms, setSuggestedTerms] = useState([
     "surfing",
     // "skateboarding",
@@ -19,15 +19,7 @@ const VideoGallery = ({ getVideoList, onVideoClick }) => {
 
   const renderGalleryRows = () => {
     return suggestedTerms.map((item) => {
-      //   console.log(item);
-      return (
-        <VideoGalleryRow
-          key={item}
-          suggestedTerm={item}
-          getVideoList={getVideoList}
-          onVideoClick={onVideoClick}
-        />
-      );
+      return <VideoGalleryRow key={item} suggestedTerm={item} />;
     });
   };
 

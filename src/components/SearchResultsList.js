@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MyContext } from "../context/MyContext";
 import SearchResultsListItem from "./SearchResultsListItem";
 
-const SearchResultsList = ({ onVideoClick, videosList }) => {
+const SearchResultsList = () => {
+  const { videosList } = useContext(MyContext);
+
   const renderVideoItems = () => {
     return videosList.map((item) => (
-      <SearchResultsListItem
-        key={item.id.videoId}
-        video={item}
-        onVideoClick={onVideoClick}
-      />
+      <SearchResultsListItem key={item.id.videoId} video={item} />
     ));
   };
 

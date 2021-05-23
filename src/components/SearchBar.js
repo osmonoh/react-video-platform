@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
+import { MyContext } from "../context/MyContext";
 
-const SearchBar = ({ onSearchSubmit }) => {
+const SearchBar = () => {
+  const { onSearchSubmit } = useContext(MyContext);
+
   const [term, setTerm] = useState("");
   const history = useHistory();
 

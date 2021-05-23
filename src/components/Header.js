@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import TwinButtons from "./TwinButtons";
 
-const Header = ({ onSearchSubmit }) => {
+const Header = () => {
   return (
     <div
       className="ui segment"
@@ -16,7 +16,7 @@ const Header = ({ onSearchSubmit }) => {
       <Link to="/">
         <h1>Logo</h1>
       </Link>
-      <SearchBar onSearchSubmit={onSearchSubmit} />
+      <SearchBar />
       <TwinButtons />
     </div>
   );

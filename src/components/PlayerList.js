@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { MyContext } from "../context/MyContext";
 import PlayerListItem from "./PlayerListItem";
 
-const PlayerList = ({ selectedVideo, getVideoList, onVideoClick }) => {
+const PlayerList = () => {
+  const { getVideoList, selectedVideo } = useContext(MyContext);
+
   const [playerList, setPlayerList] = useState([]);
 
   useEffect(() => {
@@ -12,13 +15,7 @@ const PlayerList = ({ selectedVideo, getVideoList, onVideoClick }) => {
   const renderVideoItems = () => {
     return playerList
       .filter((item) => item.id.videoId !== selectedVideo.id.videoId)
-      .map((item) => (
-        <PlayerListItem
-          key={item.id.videoId}
-          video={item}
-          onVideoClick={onVideoClick}
-        />
-      ));
+      .map((item) => <PlayerListItem key={item.id.videoId} video={item} />);
   };
 
   return <div className="ui relaxed divided list">{renderVideoItems()}</div>;

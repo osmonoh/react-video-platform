@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MyContext } from "../context/MyContext";
 
-const PlayerVideo = ({ selectedVideo }) => {
+const PlayerVideo = () => {
+  const { selectedVideo } = useContext(MyContext);
+
   if (selectedVideo) {
     const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;
 
