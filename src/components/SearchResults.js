@@ -6,6 +6,7 @@ const SearchResults = ({ onSearchSubmit, onVideoClick, videosList }) => {
   return (
     <div className="ui container">
       <Header onSearchSubmit={onSearchSubmit} />
+      {/* <h1>results</h1> */}
       <SearchResultsList onVideoClick={onVideoClick} videosList={videosList} />
     </div>
   );

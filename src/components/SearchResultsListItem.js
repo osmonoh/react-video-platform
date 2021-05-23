@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SearchResultsListItem = ({ video, onVideoClick }) => {
   const videoData = video.snippet;
@@ -8,7 +9,8 @@ const SearchResultsListItem = ({ video, onVideoClick }) => {
   };
 
   return (
-    <div
+    <Link
+      to="/watch"
       className="item"
       style={{
         display: "flex",
@@ -29,7 +31,7 @@ const SearchResultsListItem = ({ video, onVideoClick }) => {
         </div>
         <div className="description">{videoData.description}</div>
       </div>
-    </div>
+    </Link>
   );
 };
 

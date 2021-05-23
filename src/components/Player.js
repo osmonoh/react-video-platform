@@ -7,12 +7,12 @@ const Player = ({
   onSearchSubmit,
   getVideoList,
   onVideoClick,
-  videosList,
   selectedVideo,
 }) => {
   return (
     <div className="ui container">
       <Header onSearchSubmit={onSearchSubmit} />
+      {/* <h1>watch</h1> */}
       <div className="ui grid">
         <div className="eleven wide column">
           <PlayerVideo selectedVideo={selectedVideo} />
@@ -21,7 +21,6 @@ const Player = ({
           <PlayerList
             getVideoList={getVideoList}
             onVideoClick={onVideoClick}
-            videosList={videosList}
             selectedVideo={selectedVideo}
           />
         </div>

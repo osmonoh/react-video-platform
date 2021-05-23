@@ -1,28 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PlayerListItem from "./PlayerListItem";
 
-const PlayerList = ({
-  videosList,
-  selectedVideo,
-  getVideoList,
-  onVideoClick,
-}) => {
+const PlayerList = ({ selectedVideo, getVideoList, onVideoClick }) => {
   const [playerList, setPlayerList] = useState([]);
-
-  // useEffect(() => {
-  //   const getVids = async (term, numberOfVideos) => {
-  //     const result = await youtube.get("./search", {
-  //       params: {
-  //         q: term,
-  //         maxResults: numberOfVideos,
-  //       },
-  //     });
-
-  //     setPlayerList(result.data.items);
-  //   };
-
-  //   if (selectedVideo) getVids(selectedVideo.snippet.title, 3);
-  // }, [selectedVideo]);
 
   useEffect(() => {
     if (selectedVideo)

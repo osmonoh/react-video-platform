@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import TwinButtons from "./TwinButtons";
 
@@ -12,7 +13,9 @@ const Header = ({ onSearchSubmit }) => {
         alignItems: "center",
       }}
     >
-      <h1>Logo</h1>
+      <Link to="/">
+        <h1>Logo</h1>
+      </Link>
       <SearchBar onSearchSubmit={onSearchSubmit} />
       <TwinButtons />
     </div>
