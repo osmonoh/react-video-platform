@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import SearchBar from "./SearchBar";
 import TwinButtons from "./TwinButtons";
+
+import logoBlack from "../images/watch-logo-grey.png";
+// logomakr.com/5uwQ3M
 
 const Header = () => {
   return (
@@ -14,7 +18,7 @@ const Header = () => {
       }}
     >
       <Link to="/">
-        <h1>Logo</h1>
+        <img src={logoBlack} alt="logo" style={{ maxWidth: "120px" }} />
       </Link>
       <SearchBar />
       <TwinButtons />

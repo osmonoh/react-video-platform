@@ -18,7 +18,7 @@ const Container = ({ children }) => {
   };
 
   const onSearchSubmit = (term) => {
-    getVideoList(term, 2, setVideosList);
+    getVideoList(term, 3, setVideosList);
   };
 
   const onVideoClick = (video) => {
