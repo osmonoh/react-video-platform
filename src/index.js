@@ -1,5 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import Container from "./context/Container";
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+const Wrap = () => {
+  return <App />;
+};
+
+ReactDOM.render(
+  <Container>
+    <Wrap />
+  </Container>,
+  document.querySelector("#root")
+);

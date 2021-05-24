@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { MyContext } from "../context/MyContext";
 
 const SearchBar = () => {
-  const { onSearchSubmit } = useContext(MyContext);
+  const { isDark, onSearchSubmit } = useContext(MyContext);
 
   const [term, setTerm] = useState("");
   const history = useHistory();
@@ -18,6 +18,7 @@ const SearchBar = () => {
     <form className="ui form" style={{ width: "50%" }} onSubmit={onSubmit}>
       <div className="ui action input" style={{ width: "100%" }}>
         <input
+          className={isDark ? "input-dark" : undefined}
           type="text"
           placeholder="Search..."
           value={term}

@@ -4,9 +4,9 @@ import VideoGalleryRow from "./VideoGalleryRow";
 const VideoGallery = () => {
   const [suggestedTerms, setSuggestedTerms] = useState([
     "surfing",
-    // "skateboarding",
-    // "snowboarding",
-    // "dirtbikes",
+    "skateboarding",
+    "snowboarding",
+    "dirtbikes",
   ]);
 
   //   const renderGalleryRows = (numberOfRows) => {

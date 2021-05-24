@@ -5,6 +5,7 @@ import { MyContext } from "./MyContext";
 const Container = ({ children }) => {
   const [videosList, setVideosList] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [isDark, setIsDark] = useState(false);
 
   const getVideoList = async (term, numberOfVideos, setter) => {
     const result = await youtube.get("./search", {
@@ -32,6 +33,8 @@ const Container = ({ children }) => {
         setVideosList,
         selectedVideo,
         setSelectedVideo,
+        isDark,
+        setIsDark,
         getVideoList,
         onSearchSubmit,
         onVideoClick,

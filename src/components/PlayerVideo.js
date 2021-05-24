@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import { MyContext } from "../context/MyContext";
 
 const PlayerVideo = () => {
-  const { selectedVideo } = useContext(MyContext);
+  const { isDark, selectedVideo } = useContext(MyContext);
 
   if (selectedVideo) {
     const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;
 
     return (
-      <div className="ui segment">
+      <div className={`${isDark ? "inverted" : undefined} ui segment`}>
         <div className="ui embed">
           <iframe
             src={videoSrc}

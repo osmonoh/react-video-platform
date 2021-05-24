@@ -3,7 +3,7 @@ import { MyContext } from "../context/MyContext";
 import PlayerListItem from "./PlayerListItem";
 
 const PlayerList = () => {
-  const { getVideoList, selectedVideo } = useContext(MyContext);
+  const { isDark, getVideoList, selectedVideo } = useContext(MyContext);
 
   const [playerList, setPlayerList] = useState([]);
 
@@ -18,7 +18,13 @@ const PlayerList = () => {
       .map((item) => <PlayerListItem key={item.id.videoId} video={item} />);
   };
 
-  return <div className="ui relaxed divided list">{renderVideoItems()}</div>;
+  return (
+    <div
+      className={`${isDark ? "inverted" : undefined} ui relaxed divided list`}
+    >
+      {renderVideoItems()}
+    </div>
+  );
 };
 
 export default PlayerList;

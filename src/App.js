@@ -1,31 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Container from "./context/Container";
+import { MyContext } from "./context/MyContext";
 
 import Home from "./components/Home";
 import SearchResults from "./components/SearchResults";
 import Player from "./components/Player";
+import "./App.css";
 
 const App = () => {
+  const { isDark } = useContext(MyContext);
+
   return (
-    <Container>
+    <div className={isDark ? "app-dark" : undefined}>
       <BrowserRouter>
-        <div>
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/results">
-              <SearchResults />
-            </Route>
-            <Route path="/watch">
-              <Player />
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/results">
+            <SearchResults />
+          </Route>
+          <Route path="/watch">
+            <Player />
+          </Route>
+        </Switch>
       </BrowserRouter>
-    </Container>
+    </div>
   );
 };
 

@@ -3,7 +3,7 @@ import { MyContext } from "../context/MyContext";
 import SearchResultsListItem from "./SearchResultsListItem";
 
 const SearchResultsList = () => {
-  const { videosList } = useContext(MyContext);
+  const { videosList, isDark } = useContext(MyContext);
 
   const renderVideoItems = () => {
     return videosList.map((item) => (
@@ -11,7 +11,13 @@ const SearchResultsList = () => {
     ));
   };
 
-  return <div className="ui relaxed divided list">{renderVideoItems()}</div>;
+  return (
+    <div
+      className={`${isDark ? "inverted" : undefined} ui relaxed divided list`}
+    >
+      {renderVideoItems()}
+    </div>
+  );
 };
 
 export default SearchResultsList;
