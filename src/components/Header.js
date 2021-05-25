@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { MyContext } from "../context/MyContext";
 
 import SearchBar from "./SearchBar";
-import TwinButtons from "./TwinButtons";
+import HeaderButtons from "./HeaderButtons";
 
 // logomakr.com/5uwQ3M
-import logoBlack from "../images/watch-logo-grey.png";
-import logoWhite from "../images/watch-logo-white.png";
+import logoDark from "../images/watch-logo-darkgrey.png";
+import logoLight from "../images/watch-logo-lightgrey.png";
 
 const Header = () => {
   const { isDark } = useContext(MyContext);
@@ -23,13 +23,13 @@ const Header = () => {
     >
       <Link to="/">
         <img
-          src={isDark ? logoWhite : logoBlack}
+          src={isDark ? logoLight : logoDark}
           alt="logo"
           style={{ maxWidth: "120px" }}
         />
       </Link>
       <SearchBar />
-      <TwinButtons />
+      <HeaderButtons />
     </div>
   );
 };

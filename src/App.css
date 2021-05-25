@@ -1,6 +1,6 @@
 .app-dark {
   min-height: 100vh;
-  background-color: rgb(37, 37, 37);
+  background-color: #252525;
 }
 
 .header-dark {
@@ -8,7 +8,7 @@
 }
 
 .input-dark {
-  border-color: grey !important;
+  border-color: #666666 !important;
   background-color: transparent !important;
   color: #e2e2e2 !important;
 }
@@ -21,8 +21,3 @@
 .card-header-dark {
   color: #e2e2e2 !important;
 }
-
-/* .results-list-dark {
-  background-color: black !important;
-  color: white;
-} */

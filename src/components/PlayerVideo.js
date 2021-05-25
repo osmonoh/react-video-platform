@@ -1,8 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { MyContext } from "../context/MyContext";
 
 const PlayerVideo = () => {
-  const { isDark, selectedVideo } = useContext(MyContext);
+  const { isDark, mount, setMount, selectedVideo } = useContext(MyContext);
+
+  useEffect(() => {
+    setMount(true);
+
+    return () => setMount(!mount);
+  }, [mount, setMount]);
 
   if (selectedVideo) {
     const videoSrc = `https://www.youtube.com/embed/${selectedVideo.id.videoId}`;

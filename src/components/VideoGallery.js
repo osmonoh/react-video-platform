@@ -2,20 +2,12 @@ import React, { useState } from "react";
 import VideoGalleryRow from "./VideoGalleryRow";
 
 const VideoGallery = () => {
-  const [suggestedTerms, setSuggestedTerms] = useState([
+  const [suggestedTerms] = useState([
     "surfing",
-    "skateboarding",
-    "snowboarding",
-    "dirtbikes",
+    // "skateboarding",
+    // "snowboarding",
+    // "dirtbikes",
   ]);
-
-  //   const renderGalleryRows = (numberOfRows) => {
-  //     let rows = [];
-  //     for (let i = 0; i < numberOfRows; i++) {
-  //       rows = [...rows, <VideoGalleryRow />];
-  //     }
-  //     return rows;
-  //   };
 
   const renderGalleryRows = () => {
     return suggestedTerms.map((item) => {

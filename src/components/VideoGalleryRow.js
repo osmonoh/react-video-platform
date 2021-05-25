@@ -3,13 +3,13 @@ import { MyContext } from "../context/MyContext";
 import VideoGalleryRowItem from "./VideoGalleryRowItem";
 
 const VideoGalleryRow = ({ suggestedTerm }) => {
-  const { getVideoList } = useContext(MyContext);
+  const { memoGetVideoList } = useContext(MyContext);
 
   const [rowVideos, setRowVideos] = useState([]);
 
   useEffect(() => {
-    getVideoList(suggestedTerm, 4, setRowVideos);
-  }, [suggestedTerm, getVideoList]);
+    memoGetVideoList(suggestedTerm, 4, setRowVideos);
+  }, [suggestedTerm, memoGetVideoList]);
 
   const renderVideosInRow = () => {
     return rowVideos.map((item) => (

@@ -3,14 +3,18 @@ import { MyContext } from "../context/MyContext";
 import PlayerListItem from "./PlayerListItem";
 
 const PlayerList = () => {
-  const { isDark, getVideoList, selectedVideo } = useContext(MyContext);
+  const { isDark, mount, setMount, memoGetVideoList, selectedVideo } =
+    useContext(MyContext);
 
   const [playerList, setPlayerList] = useState([]);
 
   useEffect(() => {
     if (selectedVideo)
-      getVideoList(selectedVideo.snippet.title, 3, setPlayerList);
-  }, [selectedVideo, getVideoList]);
+      memoGetVideoList(selectedVideo.snippet.title, 3, setPlayerList);
+    setMount(true);
+
+    return () => setMount(!mount);
+  }, [selectedVideo, mount, setMount, memoGetVideoList]);
 
   const renderVideoItems = () => {
     return playerList

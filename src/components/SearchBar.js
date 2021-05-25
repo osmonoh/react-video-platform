@@ -24,7 +24,7 @@ const SearchBar = () => {
           value={term}
           onChange={(e) => setTerm(e.target.value)}
         />
-        <button className="ui icon button">
+        <button className={`ui icon ${isDark ? "grey" : undefined} button`}>
           <i className="search icon"></i>
         </button>
       </div>
