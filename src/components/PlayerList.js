@@ -10,7 +10,7 @@ const PlayerList = () => {
 
   useEffect(() => {
     if (selectedVideo)
-      memoGetVideoList(selectedVideo.snippet.title, 3, setPlayerList);
+      memoGetVideoList(selectedVideo.snippet.title, 12, setPlayerList);
     setMount(true);
 
     return () => setMount(!mount);
