@@ -1,6 +1,19 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import youtube from "../apis/youtube";
 import { MyContext } from "./MyContext";
+
+export const getVideoList = async (term, numberOfVideos, setter, mount) => {
+  const result = await youtube.get("./search", {
+    params: {
+      q: term,
+      maxResults: numberOfVideos,
+    },
+  });
+
+  if (mount) {
+    setter(result.data.items);
+  }
+};
 
 const Container = ({ children }) => {
   const [videosList, setVideosList] = useState([]);
@@ -8,27 +21,18 @@ const Container = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
   const [mount, setMount] = useState(true);
 
-  const getVideoList = async (term, numberOfVideos, setter) => {
-    const result = await youtube.get("./search", {
-      params: {
-        q: term,
-        maxResults: numberOfVideos,
-      },
-    });
+  // const memoGetVideoList = useCallback(
+  //   (term, numberOfVideos, setter) =>
+  //     getVideoList(term, numberOfVideos, setter),
+  //   []
+  // );
 
-    if (mount) {
-      setter(result.data.items);
-    }
-  };
-
-  const memoGetVideoList = useCallback(
-    (term, numberOfVideos, setter) =>
-      getVideoList(term, numberOfVideos, setter),
-    [term, numberOfVideos, setter]
-  );
+  // const onSearchSubmit = (term) => {
+  //   memoGetVideoList(term, 9, setVideosList);
+  // };
 
   const onSearchSubmit = (term) => {
-    memoGetVideoList(term, 9, setVideosList);
+    getVideoList(term, 9, setVideosList, mount);
   };
 
   const onVideoClick = (video) => {
@@ -46,7 +50,7 @@ const Container = ({ children }) => {
         setIsDark,
         mount,
         setMount,
-        memoGetVideoList,
+        // memoGetVideoList,
         onSearchSubmit,
         onVideoClick,
       }}

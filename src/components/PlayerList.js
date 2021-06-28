@@ -1,20 +1,22 @@
 import React, { useContext, useEffect, useState } from "react";
+import { getVideoList } from "../context/Container";
 import { MyContext } from "../context/MyContext";
 import PlayerListItem from "./PlayerListItem";
 
 const PlayerList = () => {
-  const { isDark, mount, setMount, memoGetVideoList, selectedVideo } =
-    useContext(MyContext);
+  // const { isDark, mount, setMount, memoGetVideoList, selectedVideo } =
+  //   useContext(MyContext);
+  const { isDark, mount, setMount, selectedVideo } = useContext(MyContext);
 
   const [playerList, setPlayerList] = useState([]);
 
   useEffect(() => {
     if (selectedVideo)
-      memoGetVideoList(selectedVideo.snippet.title, 12, setPlayerList);
+      getVideoList(selectedVideo.snippet.title, 12, setPlayerList, mount);
     setMount(true);
 
     return () => setMount(!mount);
-  }, [selectedVideo, mount, setMount, memoGetVideoList]);
+  }, [selectedVideo, mount, setMount]);
 
   const renderVideoItems = () => {
     return playerList
