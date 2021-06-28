@@ -24,7 +24,7 @@ const Container = ({ children }) => {
   const memoGetVideoList = useCallback(
     (term, numberOfVideos, setter) =>
       getVideoList(term, numberOfVideos, setter),
-    []
+    [getVideoList]
   );
 
   const onSearchSubmit = (term) => {
