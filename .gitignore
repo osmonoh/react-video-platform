@@ -2,7 +2,9 @@
 
 
 package-lock.json
+
 todo.md
+.env
 
 # dependencies
 /node_modules
