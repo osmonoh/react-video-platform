@@ -16,6 +16,5 @@ Used React Hooks:
 - useState
 - useContext
 - useHistory
-- useCallback
 
 The Watch project is inspired by and based on [YouTube](https://www.youtube.com/).

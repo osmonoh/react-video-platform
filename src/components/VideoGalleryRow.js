@@ -1,17 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { getVideoList } from "../context/Container";
+import { getVideoList } from "../apis/controllers";
 import { MyContext } from "../context/MyContext";
 import VideoGalleryRowItem from "./VideoGalleryRowItem";
 
 const VideoGalleryRow = ({ suggestedTerm }) => {
-  // const { memoGetVideoList } = useContext(MyContext);
   const { mount } = useContext(MyContext);
 
   const [rowVideos, setRowVideos] = useState([]);
-
-  // useEffect(() => {
-  //   memoGetVideoList(suggestedTerm, 4, setRowVideos);
-  // }, [suggestedTerm, memoGetVideoList]);
 
   useEffect(() => {
     getVideoList(suggestedTerm, 4, setRowVideos, mount);
